@@ -1,6 +1,6 @@
 * {
     font-family: Optima, sans-serif;
-    
+    font-weight: 50;
 }
 
 body {
@@ -8,47 +8,68 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-size: 3em;
+    color: black;
+}
+
 #container {
     width: 100%;
+    height: auto;
+    padding: 0;
 }
-.header {
-    color: #015f6a;
+#header {
+    color: #45919A;
     background-color: white;
     width: 100%;
-    height: 200px;
-    
+    margin-bottom: 0%;
+}
+
+.text-header {
+    font-size: 3em;
+    text-align: center;
+    padding-top: 1%;
 }
 
 #navigation {
     background-color: #015F6A;
     width: 100%;
-    height: 80px;
-
 }
 
+
 #navigation ul {
+    margin: 0;
+    padding-left: 2%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#navigation ul li a {
+    display: block;
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 25px 30px;
     text-align: center;
 }
 
-#navigation ul li {
-    list-style-type: none;
-    float: left;
-    padding-top: 20px;
-    margin: auto;
+#navigation ul li a:hover {
+    background-color: #01353b;
 }
 
+/*
+#navigation
 #navigation ul li a {
     color: white;
     
     font-size: 24pt;
     text-decoration: none;
-    
-
 }
 
 #navigation ul li a:hover {
     color: gray;
-}
+} */
 
 .menu {
     background-color: gray;
@@ -58,16 +79,57 @@ body {
     height: 600px;
 }
 
-.content {
-    background-color: orange;
-    text-align: center;
-    width: 80%;
-    float: right;
-    height: 600px;
+#content {
+    width: 100%;
+    margin: 0;
 }
 
+#content .banner img {
+    width: 100%;
+}
+
+#content h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1% 0;
+}
+
+/*#content .grid-cars {
+    display: grid;
+    
+} */
+
+.car_card {
+    width: 400px;
+    height: 300px;
+    margin: 0;
+
+    /*box-shadow: 1px 2px 4px #000;
+    border: 2px solid #015F6A;
+    border-radius: 3%;
+    background-color: aquamarine; */
+} 
+
+.car_card .top_card img {
+    width: 75%;
+    height: 60%;
+} 
+
+.car_card .desc_card {
+    text-align: center;
+    
+} 
+
+/*
+p {
+    color: #45919A;
+    text-align: center;
+    font: 1.25em; 
+} */
+
+
 .footer {
-    background-color: purple;
+    
     bottom: 0;
     width: 100%;
     min-height: 8rem;
