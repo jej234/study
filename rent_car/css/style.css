@@ -1,6 +1,7 @@
 * {
     font-family: Optima, sans-serif;
     font-weight: 50;
+    text-decoration: none;
 }
 
 body {
@@ -12,6 +13,7 @@ h1 {
     font-size: 3em;
     color: black;
 }
+
 
 #container {
     width: 100%;
@@ -36,7 +38,6 @@ h1 {
     width: 100%;
 }
 
-
 #navigation ul {
     margin: 0;
     padding-left: 2%;
@@ -56,6 +57,7 @@ h1 {
 
 #navigation ul li a:hover {
     background-color: #01353b;
+    color: gray;
 }
 
 /*
@@ -91,7 +93,8 @@ h1 {
 #content h1 {
     text-align: center;
     margin: 0;
-    padding: 1% 0;
+    padding-top: 1%;
+    padding-bottom: 5%;
 }
 
 /*#content .grid-cars {
@@ -99,26 +102,68 @@ h1 {
     
 } */
 
-.car_card {
-    width: 400px;
-    height: 300px;
-    margin: 0;
+.grid-container {
+    max-width: 75%;
+    margin: 0 auto;
+}
 
-    /*box-shadow: 1px 2px 4px #000;
-    border: 2px solid #015F6A;
-    border-radius: 3%;
-    background-color: aquamarine; */
+.grid-cars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 135px;
+    row-gap: 57px;
+}
+
+.car_card {
+    min-width: 285px;
+    min-height: 250px;
+    margin: 0;
+    border: 2px solid #45919A;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px #01353b;
 } 
+
+.car_card:hover {
+    box-shadow: 3px 6px 8px #01353b;
+}
+
+.car_card .top_card {
+    text-align: center;
+}
 
 .car_card .top_card img {
-    width: 75%;
-    height: 60%;
+    max-width: 75%;
+    max-height: 60%;
 } 
 
-.car_card .desc_card {
+.car_card .desc_card p {
     text-align: center;
-    
+    color: #45919A;
+    margin: 0;
+    font-size: 1.25em;
 } 
+
+.more a {
+    display: block;
+    color: #015F6A;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin: 25px auto;
+    width: 18%;
+    text-align: center;
+}
+
+.more h2 {
+
+}
+      
+/*hr::after {
+    background: #fff;
+    content: 'Подробнее';
+    padding: 15px 4px;
+    position: relative;
+    top: -13px;
+} */
 
 /*
 p {
