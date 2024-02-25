@@ -110,13 +110,13 @@ h1 {
 .grid-cars {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 135px;
+    column-gap: 125px;
     row-gap: 57px;
 }
 
 .car_card {
-    min-width: 285px;
-    min-height: 250px;
+    min-width: 330px;
+    min-height: 200px;
     margin: 0;
     border: 2px solid #45919A;
     border-radius: 5px;
@@ -135,6 +135,10 @@ h1 {
     max-width: 75%;
     max-height: 60%;
 } 
+
+.car_card .desc_card {
+    min-height: 70px;
+}
 
 .car_card .desc_card p {
     text-align: center;
