@@ -14,7 +14,6 @@ h1 {
     color: black;
 }
 
-
 #container {
     width: 100%;
     height: auto;
@@ -25,12 +24,13 @@ h1 {
     background-color: white;
     width: 100%;
     margin-bottom: 0%;
+    max-height: 216px;
 }
 
 .text-header {
     font-size: 3em;
     text-align: center;
-    padding-top: 1%;
+    padding: 2% 0;
 }
 
 #navigation {
@@ -59,19 +59,6 @@ h1 {
     background-color: #01353b;
     color: gray;
 }
-
-/*
-#navigation
-#navigation ul li a {
-    color: white;
-    
-    font-size: 24pt;
-    text-decoration: none;
-}
-
-#navigation ul li a:hover {
-    color: gray;
-} */
 
 .menu {
     background-color: gray;
@@ -151,10 +138,14 @@ h1 {
     display: block;
     color: #015F6A;
     font-size: 1.5em;
-    text-decoration: none;
+    text-decoration: underline;
     margin: 25px auto;
-    width: 18%;
     text-align: center;
+}
+
+.more a:hover {
+    color: gray;
+    text-decoration: none;
 }
 
 .more h2 {
@@ -178,10 +169,9 @@ p {
 
 
 .footer {
-    
+    background-color: #09312A;
     bottom: 0;
     width: 100%;
-    min-height: 8rem;
+    min-height: 233px;
     clear: both;
-    
 }
