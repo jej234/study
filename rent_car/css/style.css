@@ -153,16 +153,22 @@ section h1 {
 
 footer {
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-around;
+    align-items: center;
     background-color: #09312A;
     bottom: 0;
     width: 100%;
-    min-height: 233px;
     clear: both;
     color: white;
+    font-size: 1.5em;
+}
+
+.socials, .address, .requisites {
+    flex-basis: auto;
 }
 
 footer .socials {
-
+    text-align: center;
+    
 }
+
