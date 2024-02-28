@@ -13,6 +13,7 @@ body {
 
 
 header {
+    box-sizing: border-box;
     background-color: white;
     width: 100%;
     margin-bottom: 0%;
@@ -25,6 +26,7 @@ header a:hover {
 }
 
 header a {
+    display: block;
     font-size: 3em;
     text-align: center;
     padding: 3% 0;
@@ -40,8 +42,8 @@ nav {
 
 nav ul {
     margin: 0;
-    padding-left: 2%;
     display: flex;
+    padding: 0;
     justify-content: center;
     list-style-type: none;
 }
@@ -60,14 +62,6 @@ nav ul li a:hover {
     color: gray;
 }
 
-.menu {
-    background-color: gray;
-    text-align: center;
-    width: 20%;
-    float: left;
-    height: 600px;
-}
-
 main {
     width: 100%;
     margin: 0;
@@ -77,17 +71,26 @@ main .banner img {
     width: 100%;
 }
 
-main h1 {
+section h1 {
     text-align: center;
     margin: 0;
     padding-top: 1%;
     padding-bottom: 5%;
+    font-size: 2em;
 }
 
 /*#content .grid-cars {
     display: grid;
     
 } */
+
+.menu {
+    background-color: gray;
+    text-align: center;
+    width: 20%;
+    float: left;
+    height: 600px;
+}
 
 .grid-container {
     max-width: 75%;
@@ -148,10 +151,18 @@ main h1 {
     text-decoration: none;
 }
 
-.footer {
+footer {
+    display: flex;
+    justify-content: center;
+    
     background-color: #09312A;
     bottom: 0;
     width: 100%;
     min-height: 233px;
     clear: both;
+    color: white;
+}
+
+footer .socials {
+
 }
