@@ -154,10 +154,11 @@ section h1 {
 footer {
     box-sizing: border-box;
     padding: auto 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     background-color: #09312A;
-    height: 21vh;
+    height: 25vh;
     width: 100%;
     flex-wrap: wrap;
     clear: both;
