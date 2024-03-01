@@ -158,7 +158,7 @@ footer {
     display: flex;
     justify-content: center;
     background-color: #09312A;
-    height: 25vh;
+    height: 30vh;
     width: 100%;
     flex-wrap: wrap;
     clear: both;
@@ -175,12 +175,39 @@ footer .socials {
     text-align: left;
 }
 
-@media screen and (max-width: 1050px) {
+#sidebar {
+    background-color: rgb(255, 255, 127);
+    max-width: 20%;
+    max-height: 50%;
+    margin: 0;
     
+}
+
+#sidebar h2 {
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content p {
+    display: block;
+    background-color: black;
+}
+
+#sidebar h2 {
+    
+}
+
+@media screen and (max-width: 1050px) {
     .footer-heading {
         margin: auto 4%;
     }
 } 
 
-
-
+@media screen and (max-width: 700px) {
+    footer {
+        height: 61vh;
+    }
+}
