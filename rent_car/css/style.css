@@ -176,24 +176,66 @@ footer .socials {
 }
 
 #sidebar {
-    background-color: rgb(255, 255, 127);
-    max-width: 20%;
-    max-height: 50%;
+    background-color: #EFEFEF;
+    max-width: 30%;
+    min-height: 50%;
     margin: 0;
-    
+    border-right: 3px solid #015F6A;
+    border-bottom: 3px solid #015F6A;
 }
 
 #sidebar h2 {
+    display: block;
+    padding: 15px 0 20px 9px;
     margin: 0;
+    font-size: 2em;
 }
+
+#btn-class {
+    display: block;
+    padding: 0;
+    min-width: 80%;
+    min-height: 30%;
+    margin: 15px 25px;
+    border: 3px solid #015F6A;
+    border-radius: 10px;
+    font-size: 2em;
+    color: #45919A;
+}
+
+#btn-class:hover {
+    background-color: #09312A;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
 .dropdown-content {
     display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 100%;
 }
 
-.dropdown:hover .dropdown-content p {
+.dropdown-content a {
+    color: black;
+    text-align: left;
+    font-size: 1.25em;
+    padding: 3px 0;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(188, 188, 188);
+}
+
+
+
+.dropdown:hover .dropdown-content {
     display: block;
-    background-color: black;
+    background-color: white;
 }
 
 #sidebar h2 {
