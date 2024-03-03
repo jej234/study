@@ -18,7 +18,7 @@
                 <li><a href = "#">Контакты</a></li>
             </ul>
         </nav>
-        <section>
+        <section class="main-content catalog-content">
 
             <div id="sidebar">
                 <div id="list-car-class">
@@ -35,22 +35,24 @@
                         <div class="brand-cell">
                             <p>Марка:</p>
                             <div class="dropdown">
-                                <button class="dropbtn">Выбрать...</button>
-                                <div class="dropdown-content">
-                                    <a href="#">Марка 1</a>
-                                    <a href="#">Марка 2</a>
-                                    <a href="#">Марка 3</a>
+                                <div class="brand-choose">
+                                    <button class="dropbtn">Выбрать...</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Марка 1</a>
+                                        <a href="#">Марка 2</a>
+                                        <a href="#">Марка 3</a>
+                                    </div>
                                 </div>
                               </div>
                         </div>
                         <div class="search-panel-year">
                             <p>Год:</p>
-                            <input type="text" name="year" placeholder="Введите год">
+                            <input class="input-year" type="text" name="year" placeholder="Год">
                         </div>
                         <div class="search-panel-price">
                             <p>Стоимость: </p>
-                            <input type="text" name="price-at" placeholder="от">
-                            <input type="text" name="price-from" placeholder="до">
+                            <input class="input-price-at" type="text" name="price-at" placeholder="от">
+                            <input class="input-price-from" type="text" name="price-from" placeholder="до">
                         </div>
                         <button id="btn-accept">Поиск</button>
                     </div>
@@ -59,10 +61,9 @@
                 </div>
             </div>
 
-
-            <h1>Выбирают у нас:</h1>
-
             <div class="grid-container catalog">
+                <h1>Каталог автомобилей</h1>
+                <h2>Средний класс</h2>
                 <div class="grid-cars">
                     <div class="car_card">
                     <a href="#">
@@ -114,8 +115,13 @@
                                 </div>
                 </div>
                 
-            </div>
+                <div class="next-prev-page">
+                    <a href="#">Далее</a>
+                    <a href="">Назад</a>
+                </div>
 
+            </div>
+        </section>
         <footer>
             <div class="footer-heading socials">
                 <p>Мы в соцсетях</p>

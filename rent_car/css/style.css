@@ -71,7 +71,7 @@ main .banner img {
     width: 100%;
 }
 
-section h1 {
+.main-content h1  {
     text-align: center;
     margin: 0;
     padding-top: 1%;
@@ -177,14 +177,15 @@ footer .socials {
 
 #sidebar {
     background-color: #EFEFEF;
-    max-width: 30%;
-    min-height: 50%;
+    width: 360px;
+    height: 50%;
     margin: 0;
     border-right: 3px solid #015F6A;
     border-bottom: 3px solid #015F6A;
 }
 
 #sidebar h2 {
+    box-sizing: border-box;
     display: block;
     padding: 15px 0 20px 9px;
     margin: 0;
@@ -194,9 +195,9 @@ footer .socials {
 #btn-class {
     display: block;
     padding: 0;
-    min-width: 80%;
-    min-height: 30%;
-    margin: 15px 25px;
+    width: 320px;
+    min-height: auto;
+    margin: 15px auto;
     border: 3px solid #015F6A;
     border-radius: 10px;
     font-size: 1.75em;
@@ -207,7 +208,7 @@ footer .socials {
 #btn-class:hover {
     background-color: #09312A;
     color: white;
-    min-width: 240px;
+    
 }
 
 .search-panel-content {
@@ -221,20 +222,39 @@ footer .socials {
     font-weight: 600;
     display: inline-block;
     margin: 0;
-    padding: 0 23px;
+    padding-left: 23px;
+    width: 140px;
 }
 
-.brand-cell {
+.brand-cell, 
+.search-panel-year,
+.search-panel-price {
     width: 100%;
+    margin: 8px 0;
 }
 
 .dropdown {
-    position: relative;
+    /*position: relative; */
     display: inline-block;
   }
 
+  .brand-choose {
+    margin: 0;
+    
+  }
+
+  .dropbtn {
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.25em;
+    text-decoration: underline;
+    font-weight: 600;
+    color: #45919A;
+    padding: 0;
+}
+
 .dropdown-content {
-    display: block;
+    display: none;
     position: absolute;
     background-color: #f1f1f1;
     width: 120px;
@@ -243,9 +263,9 @@ footer .socials {
 
 .dropdown-content a {
     color: black;
-    text-align: left;
+    text-align: center;
     font-size: 1.25em;
-    padding: 3px 0;
+    padding: 5px 3px;
 }
 
 .dropdown-content a:hover {
@@ -257,20 +277,30 @@ footer .socials {
     background-color: white;
 }
 
-.dropbtn {
-    box-sizing: border-box;
-    border: none;
-    font-size: 1.25em;
-    text-decoration: underline;
-    font-weight: 600;
-    color: #45919A;
-    /*margin: 0 30px;*/
+.input-year, .input-price-at, .input-price-from {
+    width: 45px;
+    height: 22px;
+    margin: 0;
 }
 
+#btn-accept {
+    margin: 10px 20px 10px 280px;
+    width: 65px;
+    height: 30px;
+    background-color: #09312A;
+    color: white;
+}
 
+.catalog-content {
+    display: flex;
+}
 
+.catalog {
+    margin: 5% auto;
+    background-color: aqua;
+    max-width: 65%;
 
-
+}
 
 @media screen and (max-width: 1050px) {
     .footer-heading {
