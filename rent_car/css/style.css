@@ -199,13 +199,33 @@ footer .socials {
     margin: 15px 25px;
     border: 3px solid #015F6A;
     border-radius: 10px;
-    font-size: 2em;
+    font-size: 1.75em;
     color: #45919A;
+    background-color: white;
 }
 
 #btn-class:hover {
     background-color: #09312A;
     color: white;
+    min-width: 240px;
+}
+
+.search-panel-content {
+    background-color: #EFEFEF;
+    box-sizing: border-box;
+}
+
+.search-panel-content p {
+    font-size: 1.25em;
+    color: #45919A;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0;
+    padding: 0 23px;
+}
+
+.brand-cell {
+    width: 100%;
 }
 
 .dropdown {
@@ -214,10 +234,11 @@ footer .socials {
   }
 
 .dropdown-content {
-    display: none;
+    display: block;
     position: absolute;
     background-color: #f1f1f1;
-    width: 100%;
+    width: 120px;
+    overflow: auto;
 }
 
 .dropdown-content a {
@@ -231,16 +252,25 @@ footer .socials {
     background-color: rgb(188, 188, 188);
 }
 
-
-
 .dropdown:hover .dropdown-content {
     display: block;
     background-color: white;
 }
 
-#sidebar h2 {
-    
+.dropbtn {
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.25em;
+    text-decoration: underline;
+    font-weight: 600;
+    color: #45919A;
+    /*margin: 0 30px;*/
 }
+
+
+
+
+
 
 @media screen and (max-width: 1050px) {
     .footer-heading {
