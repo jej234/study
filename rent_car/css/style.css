@@ -107,6 +107,7 @@ main .banner img {
 }
 
 .car_card {
+    box-sizing: border-box;
     min-width: 100%;
     min-height: 200px;
     margin: 0;
@@ -179,7 +180,7 @@ footer .socials {
 
 #sidebar {
     background-color: #EFEFEF;
-    width: 360px;
+    width: 300px;
     height: 50%;
     margin: 0;
     border-right: 3px solid #015F6A;
@@ -197,7 +198,7 @@ footer .socials {
 #btn-class {
     display: block;
     padding: 0;
-    width: 320px;
+    width: 240px;
     min-height: auto;
     margin: 15px auto;
     border: 3px solid #015F6A;
@@ -286,7 +287,7 @@ footer .socials {
 }
 
 .btn-accept {
-    margin: 10px 20px 10px 280px;
+    margin: 10px 20px 10px 210px;
     width: 65px;
     height: 30px;
     background-color: #09312A;
@@ -332,21 +333,41 @@ footer .socials {
 .card-properties {
     box-sizing: border-box;
     font-size: 0.9em;
-    min-width: 50%;
+    min-width: 39%;
     padding-left: 4%;
 }
 
-.price {
-    font-size: 1.5em;
+.card-price {
+    font-size: 1.25em;
     color: black;
-    
+    min-width: 61%;
+    box-sizing: border-box;
+}
+
+.card-price p {
+    display: block;
+    margin: 14px auto 6px auto;
+    padding: 0 3px 0 8px;
+    font-weight: 700;
+}
+
+.desc_card-catalog {
+    min-height: 70px;
+    box-sizing: border-box;
 }
 
 .desc_card-catalog .card-properties p {
+    display: block;
     text-align: left;
+    color: #45919A;
+    margin: 0;
+    font-size: 1.25em;
 }
 
-
+.btn-detailed {
+    margin: 1% 1% 1% 20%;
+    width: 85px;
+}
 
 @media screen and (max-width: 1050px) {
     .footer-heading {
