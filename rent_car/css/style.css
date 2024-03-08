@@ -299,11 +299,15 @@ footer .socials {
     font-size: 100%;
 }
 
-
-
 .catalog {
-    margin: 5% auto;
-    max-width: 55%;
+    margin: 3% auto;
+    max-width: 80%;
+}
+
+.car-card-catalog {
+    width: 380px;
+    flex-direction: column;
+    position:relative;
 }
 
 .catalog-header {
@@ -324,8 +328,9 @@ footer .socials {
 }
 
 .grid-cars-catalog {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 85px;
+    /*grid-template-columns: repeat(2, 1fr);*/
+    grid-template-columns: repeat(auto-fill, 380px);
+    column-gap: 25px;
     row-gap: 57px;
 }
 
