@@ -300,8 +300,11 @@ footer .socials {
 }
 
 .catalog {
-    margin: 3% auto;
-    max-width: 80%;
+    margin: 55px auto;
+    width: 100%;
+    max-width: 1350px;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
 .car-card-catalog {
@@ -328,10 +331,13 @@ footer .socials {
 }
 
 .grid-cars-catalog {
+    width: 100%;
+    max-width: 1300px;
     /*grid-template-columns: repeat(2, 1fr);*/
     grid-template-columns: repeat(auto-fill, 380px);
     column-gap: 25px;
-    row-gap: 57px;
+    row-gap: 37px;
+    justify-content: center;
 }
 
 .desc_card-catalog {
