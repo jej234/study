@@ -16,7 +16,7 @@ h1 {
     font-size: 2.75em;
 }
 
-header {
+#header {
     box-sizing: border-box;
     background-color: white;
     width: 100%;
@@ -25,11 +25,11 @@ header {
     text-align: center;
 }
 
-header a:hover {
+#header a:hover {
     color: gray;
 }
 
-header a {
+#header a {
     display: block;
     font-size: 3em;
     text-align: center;
@@ -427,14 +427,67 @@ footer .socials {
     color: gray;
 }
 
-@media screen and (max-width: 1050px) {
-    .footer-heading {
-        margin: auto 4%;
-    }
-} 
+/* 
+
+    Стили для car_page.html
+
+*/
+
+.car-page-container {
+    box-sizing: border-box;
+    width: 85%;
+    margin: 30px auto;
+    background-color: rgb(249, 197, 131);
+}
+
+.car-page-container .car-page-header {
+    display: block;
+    margin: 0 auto;
+}
+
+.car-page-header h1 {
+    display: block;
+    margin: 0 auto;
+}
+
+.car-images {
+    background-color: F4F4F4;
+    float: left;
+    width: 65%;
+    height: 500px;
+}
+
+.car-specifications {
+    background-color: F4F4F4;
+    width: 35%;
+    height: 350px;
+}
+
+.car-description {
+    background-color: F4F4F4;
+    clear: both;
+    width: 100%;
+}
 
 @media screen and (max-width: 700px) {
     footer {
         height: 61vh;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .grid-cars {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 57px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .footer-heading {
+        margin: auto 4%;
+    }
+} 
+
+
+
+
