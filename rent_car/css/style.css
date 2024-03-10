@@ -434,7 +434,6 @@ footer .socials {
 */
 
 .car-page-content {
-    background-color: #45919A;
     margin: 0 10%;
 }
 
@@ -442,7 +441,6 @@ footer .socials {
     box-sizing: border-box;
     max-width: 1100px;
     margin: 30px auto;
-    background-color: rgb(249, 197, 131);
 }
 
 .car-page-container .car-page-header {
@@ -485,14 +483,42 @@ footer .socials {
     margin: 0 auto;
 }
 
+.gallery-car-images {
+    /* display: flex; */
+    /*justify-content: flex-start; */
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+.wrap-inactive-img {
+    display: inline-block; 
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+    background-color: #333333;
+}
+
+.inactive-image {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+    max-height: 100px;
+}
+
+.wrap-inactive-img:hover {
+    box-sizing: border-box;
+    outline: 2px solid rgb(12, 110, 229);
+}
+
 .car-specifications {
-    background-color: #da0909;
+    background-color: #dbdbdb;
     height: 350px;
-    
 }
 
 .car-description {
-    background-color: #F4F4F4;
+    background-color: #dbdbdb;
     clear: both;
     width: 100%;
     margin: 10px auto;
