@@ -463,14 +463,14 @@ footer .socials {
 
 .car-images {
     box-sizing: border-box;
-    background-color: #dbdbdb;
+    background-color: #F4F4F4;
     height: 450px;
     margin-bottom: 20px;
 }
 
 .choosen-car-image {
     max-width: 90%;
-    margin: 15px auto;
+    margin: 15px 35px;
     height: 300px;
     background-color: #333333;
 
@@ -513,15 +513,60 @@ footer .socials {
 }
 
 .car-specifications {
-    background-color: #dbdbdb;
+    background-color: #F4F4F4;
     height: 350px;
 }
 
+.header-car-spec, .car-spec-values {
+    list-style-type: none;
+    font-size: 1.25em;
+    line-height: 0.75;
+    color: #45919A;
+    width: 45%;
+    padding: 0;
+    margin: 0;
+    padding-top: 25px;
+}
+
+.header-car-spec {
+    float: left;
+    padding-left: 10px;
+    text-decoration: underline;
+    
+}
+
+.car-spec-values {
+    float: right;
+    text-align: right;
+    padding-right: 10px;
+    text-transform: lowercase;
+}
+
 .car-description {
-    background-color: #dbdbdb;
+    background-color: #F4F4F4;
     clear: both;
-    width: 100%;
-    margin: 10px auto;
+    margin: 5px auto;
+    padding: 15px;
+}
+
+.header-desc {
+    font-size: 1.5em;
+    color:#45919A;
+}
+
+.header-desc h3 {
+    display: block;
+    margin: 0 0 15px 0;
+}
+
+.text-description {
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.text-description p {
+    display: block;
+    margin: 0;
 }
 
 @media screen and (max-width: 700px) {
