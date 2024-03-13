@@ -626,6 +626,28 @@ footer .socials {
     text-align: center;
 }
 
+.about-banner img {
+    display: block;
+    margin: 0 auto;
+    width: 370px;
+    height: 225px;
+}
+
+.about-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-container h2 {
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.about-container p {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
 @media screen and (max-width: 700px) {
     footer {
         height: 61vh;
