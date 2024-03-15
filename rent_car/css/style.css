@@ -122,10 +122,11 @@ main .banner img {
 
 .car_card .top_card {
     text-align: center;
+    /* min-height: 60%; */
 }
 
 .car_card .top_card img {
-    max-width: 75%;
+    width: 75%;
     max-height: 60%;
 } 
 
@@ -137,7 +138,7 @@ main .banner img {
     text-align: center;
     color: #45919A;
     margin: 0;
-    font-size: 1.25em;
+    font-size: 0.9em;
 } 
 
 .more a {
@@ -179,8 +180,8 @@ footer .socials {
 }
 
 .block-socials img:hover {
-    transition: 0.5s;
-    transform: scale(1.2);
+    transition: 0.8s;
+    transform: scale(1.1);
 }
 
 #sidebar {
@@ -359,7 +360,7 @@ footer .socials {
 }
 
 .card-price {
-    font-size: 1.7em;
+    font-size: 1.5em;
     text-align: center;
     color: black;
     
@@ -388,7 +389,7 @@ footer .socials {
     text-align: center;
     color: #45919A;
     margin: 0;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 .card-btn {
@@ -524,7 +525,7 @@ footer .socials {
 
 .header-car-spec, .car-spec-values {
     list-style-type: none;
-    font-size: 1.25em;
+    font-size: 1.1em;
     line-height: 0.75;
     color: #45919A;
     width: 45%;
@@ -544,7 +545,7 @@ footer .socials {
     float: right;
     text-align: right;
     padding-right: 10px;
-    text-transform: lowercase;
+    text-transform: capitalize;
 }
 
 .car-description {
