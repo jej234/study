@@ -6,10 +6,21 @@
 </head>
 <body>
     <main>
-  
-    <?php include 'templates/header.php' ?>
-    <?php include 'templates/navbar.php' ?>
 
-    <?php include 'catalog.php'?>
+    <?php 
 
-    <?php include 'templates/footer.php'?>
+    include 'templates/header.php'; 
+    include 'templates/navbar.php';
+
+    if (isset($_GET['p'])) {
+        $page_id = $_GET['p'];
+        
+    } else { 
+        $page_id = "main";
+    }
+
+    include "{$page_id}.php";
+
+    include 'templates/footer.php' 
+    
+    ?>
