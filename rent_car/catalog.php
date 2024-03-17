@@ -1,65 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Прокат автомобилей в Орле</title>
-</head>
-<body>
-    <main>
-        <header id="header">
-            <a href="main.html">Прокат авто<br>57</a>
-        </header>
-        <nav>
-            <ul>
-                <li><a href = "main.html">Главная</a></li>
-                <li><a href = "catalog.html">Автомобили</a></li>
-                <li><a href = "about.html">О нас</a></li>
-                <li><a href = "contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-        <section class="main-content catalog-content">
+    <section class="main-content catalog-content">
 
-            <div id="sidebar">
-                <div id="list-car-class">
-                    <h2>Выбор авто:</h2>
-                        <div class="btn-classes">
-                            <button id="btn-class">Эконом класс</button>
-                            <button id="btn-class">Средний класс</button>
-                            <button id="btn-class">Премиум класс</button>
-                        </div>
-                </div>
-                <div id="search-panel">
-                    <h2>Поиск:</h2>
-                    <div class="search-panel-content">
-                        <div class="brand-cell">
-                            <p>Марка:</p>
-                            <div class="dropdown">
-                                <div class="brand-choose">
-                                    <button class="dropbtn">Выбрать...</button>
-                                    <div class="dropdown-content">
-                                        <a href="#">Марка 1</a>
-                                        <a href="#">Марка 2</a>
-                                        <a href="#">Марка 3</a>
-                                    </div>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="search-panel-year">
-                            <p>Год:</p>
-                            <input class="input-year" type="text" name="year" placeholder="Год">
-                        </div>
-                        <div class="search-panel-price">
-                            <p>Стоимость: </p>
-                            <input class="input-price-at" type="text" name="price-at" placeholder="от">
-                            <input class="input-price-from" type="text" name="price-from" placeholder="до">
-                        </div>
-                        <button class="btn-accept">Поиск</button>
-                    </div>
-                    
-
-                </div>
-            </div>
+            <?php include('templates/sidebar.php') ?>
 
             <div class="grid-container catalog">
 
@@ -70,7 +11,7 @@
                 
                 <div class="grid-cars grid-cars-catalog">
                     <div class="car_card car-card-catalog">
-                    <a href="car_page.html">
+                    <a href="car_page.php">
                         <div class="top_card top-card-catalog">
                             <img src="resources/image_3.png" alt="картинка автомобиля на карточке">
                         </div>
@@ -90,7 +31,7 @@
                     </a>
                     </div>
                     <div class="car_card car-card-catalog">
-                        <a href="car_page.html">
+                        <a href="car_page.php">
                             <div class="top_card top-card-catalog">
                                 <img src="resources/2.png" alt="картинка автомобиля на карточке">
                             </div>
@@ -178,28 +119,6 @@
                 </div>
 
             </div>
-        </section>
-        <footer>
-            <div class="footer-heading socials">
-                <p>Мы в соцсетях</p>
-                <div class="block-socials">
-                    <a href="#"><img src="resources/icons8-vk-circled-48.png"></a>
-                    <a href="#"><img src="resources/icons8-telegram-app-48.png"></a>
-                    <a href="#"><img src="resources/icons8-whatsapp-48.png"></a>
-                </div>
-            </div>
-            <div class="footer-heading address">
-                <p>Наш адрес:</p>
-                <p>пл. Мира, д.4, Орёл<br>
-                Круглосуточно, без выходных</p>
-            </div>
-            <div class="footer-heading requisites">
-                <p>Реквизиты</p>
-                <p>ИП Альтмарк 2024<br>
-                Прокат автомобилей в Орле</p>
-            </div>
-        </footer>
-    </main>
-           
-</body>
-</html>
+
+    </section>
+        
