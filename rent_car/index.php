@@ -9,8 +9,8 @@
 
     <?php 
 
-    include 'templates/header.php'; 
-    include 'templates/navbar.php';
+    include_once 'templates/header.php'; 
+    include_once 'templates/navbar.php';
 
     if (isset($_GET['p'])) {
         $page_id = $_GET['p'];
@@ -20,6 +20,6 @@
 
     include "{$page_id}.php";
 
-    include 'templates/footer.php' 
+    include_once 'templates/footer.php' 
     
     ?>
