@@ -14,7 +14,6 @@
 
     if (isset($_GET['p'])) {
         $page_id = $_GET['p'];
-        
     } else { 
         $page_id = "main";
     }

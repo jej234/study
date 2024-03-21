@@ -2,9 +2,11 @@
                 <div id="list-car-class">
                     <h2>Выбор авто:</h2>
                         <div class="btn-classes">
-                            <button id="btn-class">Эконом класс</button>
+                            <form action="index.php" method="get">
+                            <button id="btn-class" type="submit" name="class" value="1">Эконом класс</button>
                             <button id="btn-class">Средний класс</button>
                             <button id="btn-class">Премиум класс</button>
+                            </form>
                         </div>
                 </div>
 

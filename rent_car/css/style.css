@@ -61,10 +61,16 @@ nav ul li a {
     text-align: center;
 }
 
+nav ul li a:active {
+    text-decoration: underline;
+}
+
 nav ul li a:hover {
     background-color: #01353b;
     color: gray;
 }
+
+
 
 main {
     width: 100%;
@@ -217,7 +223,6 @@ footer .socials {
 #btn-class:hover {
     background-color: #09312A;
     color: white;
-    
 }
 
 .search-panel-content {
