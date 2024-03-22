@@ -18,6 +18,10 @@
         $page_id = "main";
     }
 
+    if (isset($_POST["class"])) {
+        $page_id = "catalog";
+    }
+
     include "{$page_id}.php";
 
     include_once 'templates/footer.php' 
