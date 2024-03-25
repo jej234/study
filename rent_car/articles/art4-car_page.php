@@ -32,7 +32,7 @@
                     </ul>
                     <ul class="car-spec-values">
                         <li><h3>"Средний" класс</h3></li>
-                        <li><h3>Taliant</h3></li>
+                        <li><h3>Corolla</h3></li>
                         <li><h3>2009</h3></li>
                         <li><h3>седан</h3></li>
                         <li><h3>автомат</h3></li>

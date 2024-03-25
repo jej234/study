@@ -4,7 +4,7 @@
     $year = [1=> "2024", "2023", "2022", "2021"];
 
     $car_classes = array(1 => "Эконом класс", "Средний класс","Премиум класс");
-    print_r($_POST);
+
     $cur_class;
 
     if (!isset($_POST['class'])) {
@@ -13,7 +13,7 @@
         $cur_class = $_POST['class'];
     }
 
-    $num_of_cards = 3;
+    $num_of_cards = 6;
     $card_car_classes = array(  
                                 1=> array(1=> "1", "4"), 
                                 2=> array(1=> "3"), 

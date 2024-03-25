@@ -1,5 +1,5 @@
 <div class="car_card car-card-catalog">
-                                <a href="corolla_page.html">
+                                <a href="car_page.php?id=4">
                                     <div class="top_card top-card-catalog">
                                         <img src="resources/corolla.jpg" alt="картинка автомобиля на карточке">
                                     </div>

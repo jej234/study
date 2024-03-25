@@ -18,7 +18,7 @@
                 </div>
 
             <div class="more">
-                <a href = "catalog.html">
+                <a href = "index.php?p=catalog">
                     <h2>Подробнее</h2>
                 </a>
             </div>
