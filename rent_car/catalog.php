@@ -1,5 +1,7 @@
 <?php
 
+    include 'functions.php';
+
     $brands = [1=> "Mercedes-Benz", "Renault", "Fiat", "LADA", "Toyota", "BMW"];
     $year = [1=> "2024", "2023", "2022", "2021"];
     $car_classes = array(1 => "Эконом класс", "Средний класс","Премиум класс");
@@ -9,7 +11,7 @@
         3=> array(1=> "2", "5")
     );
 
-    $card_car = array("1", "4", "3", "2", "5","5","5","1");
+    $card_car = array("1", "4", "3", "2", "5","5","5","5","1");
 
     $cur_class;
 
@@ -21,12 +23,9 @@
 
     $num_of_cards = 4;
     $page_count = floor(count($card_car) / $num_of_cards);
-    if($page_count % $num_of_cards == 0) {
-        echo "dct";
+    if(count($card_car) % $num_of_cards == 0) {
         $page_count = $page_count - 1;
     }
-    $page_count = floor(count($card_car) / $num_of_cards);
-    echo $page_count;
     
     if (!isset($_GET['page_cat'])) {
         $page = 0;
@@ -147,11 +146,11 @@
                 </div>
                 
                 <div class="next-prev-page">
-                    <a href="#"><p><-Назад</p></a>
+                    <a href="?p=catalog&page_cat=<?php echo check_prev($page, $page_count)?>"><p><-Назад</p></a>
                     <?php for($i = 0; $i <= $page_count; $i++): ?>
                     <a href="?p=catalog&page_cat=<?php echo $i ?>"><p><?php echo $i+1 ?></p></a>
                     <?php endfor; ?>
-                    <a href="#"><p>Далее-></p></a>
+                    <a href="?p=catalog&page_cat=<?php echo check_next($page, $page_count)?>"><p>Далее-></p></a>
                 </div>
 
             </div>
