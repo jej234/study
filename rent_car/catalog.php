@@ -5,22 +5,32 @@
     $brands = [1=> "Mercedes-Benz", "Renault", "Fiat", "LADA", "Toyota", "BMW"];
     $year = [1=> "2024", "2023", "2022", "2021"];
     $car_classes = array(1 => "Эконом класс", "Средний класс","Премиум класс");
+    $card_car_econom = array("1", "4");
+    $card_car_medium = array("3");
+    $card_car_premium = array("2","5");
+
     $card_car_classes = array(  
         1=> array(1=> "1", "4"), 
         2=> array(1=> "3"), 
         3=> array(1=> "2", "5")
     );
 
-    $card_car = array("1", "4", "3", "2", "5","5","5","5","1");
+    $all_car = array("1", "4", "3", "2", "5","5","5","5","1");
 
     $cur_class;
 
     if (!isset($_POST['class'])) {
-        $cur_class = NULL;
+        $cur_class = 0;
+        echo "POST cur class = $cur_class";
+        $card_car = $all_car;
     } else {
         $cur_class = $_POST['class'];
+        echo "POST cur class = $cur_class";
+        $card_car = $card_car_econom;
     }
+    
 
+    
     $num_of_cards = 4;
     $page_count = floor(count($card_car) / $num_of_cards);
     if(count($card_car) % $num_of_cards == 0) {
@@ -97,7 +107,7 @@
                 <header class="catalog-header">
                     <h1 class="header-page-name">Каталог автомобилей</h1>
                         <?php 
-                            if (!(isset($cur_class))) {
+                            if ($cur_class == 0) {
                                 echo "<h2 class=\"header-class-name\">Все автомобили</h2>";
                             } else {
                                 echo "<h2 class=\"header-class-name\">$car_classes[$cur_class]</h2>";
@@ -110,7 +120,7 @@
                     
                     <?php
 
-                        if (isset($cur_class)) {
+                        if ($cur_class !=0 ) {
                             foreach($card_car_classes[$cur_class] as $key => $value) {
                                 include "articles/catalog_card{$value}.php";
                             }   
@@ -146,11 +156,11 @@
                 </div>
                 
                 <div class="next-prev-page">
-                    <a href="?p=catalog&page_cat=<?php echo check_prev($page, $page_count)?>"><p><-Назад</p></a>
+                    <a href="?p=catalog&cur-class=<?php echo $cur_class?>&page_cat=<?php echo check_prev($page, $page_count)?>"><p><-Назад</p></a>
                     <?php for($i = 0; $i <= $page_count; $i++): ?>
-                    <a href="?p=catalog&page_cat=<?php echo $i ?>"><p><?php echo $i+1 ?></p></a>
+                    <a href="?p=catalog&cur-class=<?php echo $cur_class?>&page_cat=<?php echo $i ?>"><p><?php echo $i+1 ?></p></a>
                     <?php endfor; ?>
-                    <a href="?p=catalog&page_cat=<?php echo check_next($page, $page_count)?>"><p>Далее-></p></a>
+                    <a href="?p=catalog&cur-class=<?php echo $cur_class?>&page_cat=<?php echo check_next($page, $page_count)?>"><p>Далее-></p></a>
                 </div>
 
             </div>
