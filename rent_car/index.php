@@ -11,6 +11,7 @@
 
     include_once 'templates/header.php'; 
     include_once 'templates/navbar.php';
+    include_once 'functions/scr-catalog.php';
 
     if (isset($_GET['p'])) {
         $page_id = $_GET['p'];
@@ -18,7 +19,7 @@
         $page_id = "main";
     }
 
-    if (isset($_POST["class"])) {
+    if (isset($_GET["class"])) {
         $page_id = "catalog";
     }
 
