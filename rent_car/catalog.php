@@ -92,8 +92,10 @@
                         </div>
                         <div class="search-panel-price">
                             <p>Стоимость: </p>
-                            <input class="input-price-at" type="number" name="price-at" placeholder="от ₽" min="1000" max="90000">
-                            <input class="input-price-from" type="number" name="price-from" placeholder="до ₽" min="1001" max="90000">
+                            <div class="inputs-price">
+                                <input class="input-price-at" type="number" name="price-at" placeholder="от ₽" min="1000" max="90000">
+                                <input class="input-price-from" type="number" name="price-from" placeholder="до ₽" min="1001" max="90000">
+                            </div>
                         </div>
                         <button type="submit" class="btn-accept">Поиск</button>
                     </div>

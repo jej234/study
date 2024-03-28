@@ -192,7 +192,7 @@ footer .socials {
 
 #sidebar {
     background-color: #EFEFEF;
-    width: 350px;
+    width: 310px;
     height: 50%;
     margin: 0;
     border-right: 3px solid #015F6A;
@@ -247,6 +247,10 @@ footer .socials {
     margin: 8px 0;
 }
 
+.search-panel-price {
+    display: block;
+}
+
 .dropdown {
     /*position: relative; */
     display: inline-block;
@@ -291,8 +295,23 @@ footer .socials {
     background-color: white;
 }
 
-.input-year, .input-price-at, .input-price-from {
+.search-panel-price p {
+    display: block;
+}
+
+.input-year {
     width: 45px;
+    height: 22px;
+    margin: 0;
+}
+
+.inputs-price {
+    margin-left: 23px;
+    margin-top: 5px;
+}
+
+.input-price-at, .input-price-from {
+    width: 80px;
     height: 22px;
     margin: 0;
 }
