@@ -4,8 +4,6 @@
 
     $num_of_cards = 6;
 
-    $brands = [1=> "Mercedes-Benz", "Renault", "Fiat", "LADA", "Toyota", "BMW"];
-    $year = [1=> "2024", "2023", "2022", "2021"];
     $car_classes = array(1 => "Эконом класс", "Средний класс","Премиум класс");
     $card_car_econom = array("1", "4");
     $card_car_medium = array("3");

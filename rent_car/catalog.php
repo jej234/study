@@ -6,9 +6,13 @@
                     <h2>Выбор авто:</h2>
                         <div class="btn-classes">
                             <form action="index.php" method="get">
-                                <?php foreach ($car_classes as $class_id => $class_name) {
-                                    echo "<button id='btn-class' type='submit' name='class' value='$class_id'>$class_name</button>";
-                                } ?>
+                                <?php 
+                                    $class_arr = get_classes();
+                                    foreach ($class_arr as $val):
+                                ?>
+                                    <button id='btn-class' type='submit' name='class' value="<?=$val["car_class_id"] ?>"><?=$val["car_class_name"] ?></button>;
+                                
+                                <?php endforeach ?>
                             </form>
                         </div>
                 </div>
@@ -25,8 +29,10 @@
                                 <div class="brand-choose">
                                     <div class="dropdown-content">
                                         <option value="0">Все</option>
-                                        <?php foreach ($brands as $key => $value): ?>
-                                        <option value=<?php echo $key ?>><?php echo $value ?></option>
+                                        <?php
+                                            $brands_arr = get_brands(); 
+                                            foreach ($brands_arr as $val): ?>
+                                        <option value=<?=$val["brand_id"] ?>><?=$val["brand_name"] ?></option>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
@@ -37,8 +43,11 @@
                             <p>Год:</p>
                             <select name="year">
                                 <option value="0">Любой</option>
-                                <?php foreach ($year as $key => $value): ?>
-                                    <option value=<?php echo $key ?>><?php echo $value ?></option>
+                                <?php 
+                                    $year = get_year();
+                                    foreach ($year as $val): 
+                                ?>
+                                    <option value=<?=$val["release_date"] ?>><?=$val["release_date"] ?></option>
                                 <?php endforeach; ?>
                             </select>
                                 
