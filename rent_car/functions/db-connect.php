@@ -1,6 +1,7 @@
 <?php
 
-$db_host = "localhost:3306";
+//$db_host = "localhost:3306";
+$db_host = "localhost:3310";
 $db_name = "prokat57";
 $db_user = "root";
 $db_pass = "";
@@ -39,5 +40,23 @@ function get_brands() {
 function get_year() {
     global $db;
     $q = $db->query("SELECT DISTINCT release_date FROM car;");
+    return $q;
+}
+function get_data_car_page($car_id) {
+    global $db;
+    $q = $db->query("SELECT row_car.car_id, row_car.release_date, row_car.rent_price, 
+    car_model.car_model_name, brand.brand_name, color.color_name, 
+    car_class.car_class_name, body.body_name, transmission.transmission_name
+        FROM (SELECT car_id, release_date, rent_price, car_model_id, color_id, body_id, 
+                transmission_id 
+                FROM car 
+                WHERE car_id = $car_id) AS row_car 
+        JOIN car_model ON row_car.car_model_id = car_model.car_model_id 
+        JOIN brand ON brand.brand_id = car_model.brand_id 
+        JOIN car_class ON car_class.car_class_id = car_model.car_class_id
+        JOIN color ON color.color_id = row_car.color_id
+        JOIN car_class ON car_class.car_class_id = row_car.car_model_id
+        JOIN body ON body.body_id = row_car.body_id
+        JOIN transmission ON transmission.transmission_id = row_car.transmission_id;");
     return $q;
 }
