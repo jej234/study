@@ -16,7 +16,8 @@
         $article_id = $_GET['id'];
         
     } 
-
+    $f_car_image = get_car_images(1, $article_id);
+    $o_car_image = get_car_images(3, $article_id);
     $car_row = get_data_car_page($article_id);
     //include "articles/art{$article_id}-car_page.php";
     ?>
@@ -29,19 +30,17 @@
                 </header>
                 <section class="wrap-car-image-spec">
                 <div class="car-images">
+                    <?php foreach($f_car_image as $f_img): ?>
                     <div class="choosen-car-image">
-                        <img class="chosen-image" src="resources/mb3.jpg" alt="">
+                        <img class="chosen-image" src="<?=$f_img["link_car_image"]?>" alt="">
                     </div>
+                    <?php endforeach ?>
                     <div class="gallery-car-images">
+                        <?php foreach($o_car_image as $o_img): ?>
                         <div class="wrap-inactive-img">
-                            <img class="inactive-image" src="resources/mb3.jpg" alt="">
+                            <img class="inactive-image" src="<?=$o_img["link_car_image"]?>" alt="">
                         </div>
-                        <div class="wrap-inactive-img">
-                            <img class="inactive-image" src="resources/mb1.jpg" alt="">
-                        </div>
-                        <div class="wrap-inactive-img">
-                            <img class="inactive-image" src="resources/mb2.jpg" alt="">
-                        </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <div class="car-specifications">
@@ -57,9 +56,9 @@
                         <li><h3><?=$val["car_class_name"] ?></h3></li>
                         <li><h3><?=$val["car_model_name"] ?></h3></li>
                         <li><h3><?=$val["release_date"] ?></h3></li>
-                        <li><h3>седан</h3></li>
-                        <li><h3>автомат</h3></li>
-                        <li><h3>синий</h3></li>
+                        <li><h3><?=$val["body_name"] ?></h3></li>
+                        <li><h3><?=$val["transmission_name"] ?></h3></li>
+                        <li><h3><?=$val["color_name"] ?></h3></li>
                     </ul>
                 </div>
                 </section>
@@ -68,13 +67,7 @@
                         <h3>Описание:</h3>
                     </header>
                     <div class="text-description">
-                        <p>Наша компания предлагает общедоступную аренду 
-                            автомобилей для всех категорий пользователей. 
-                            У вас пока нет своей машины, вы приехали в наш город в гости или по делам? Возьмите напрокат 
-                            Mercedes-Benz E-Classe, который обеспечит все ваши 
-                            потребности в комфортном передвижении. Просторный 
-                            салон седана вмещает в себя пять пассажиров, поддерживается 
-                            комфортный микроклимат зимой и летом. </p>
+                        <p><?=$val["description"] ?></p>
                     </div>
                 </div>
             </div>

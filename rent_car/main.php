@@ -23,7 +23,7 @@
                             <div class="desc_card">
                                 <p><?php echo $val["brand_name"]; echo " ".$val["car_model_name"]; ?></p>
                                 <p><?=$val["release_date"] ?></p>
-                                <p><?=$val["rent_price"]+0 ?></p>
+                                <p><?=$val["rent_price"]+0 ?>₽</p>
                             </div>
                         </a>
                 </div>
