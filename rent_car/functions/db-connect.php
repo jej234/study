@@ -165,7 +165,6 @@ function get_catalog_search($brand_id=0, $year=0) {
         WHERE car_model.brand_id = $brand_id AND car.release_date = $year;");
     }
 
-        
     return $q;
 }
 

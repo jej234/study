@@ -22,27 +22,25 @@
     if (!isset($_GET['class']) || ($_GET['class']) == 0) {
         $cur_class = 0;
         //$card_car = $all_car;
+        $card_car = get_catalog_card_data($cur_class);
+        $num_of_cards_from_query = get_num_catalog_card_data($cur_class);
         
     } else {
         $cur_class = $_GET['class'];
         //$card_car = $card_car_classes[$cur_class];
+        $card_car = get_catalog_card_data($cur_class);
+        $num_of_cards_from_query = get_num_catalog_card_data($cur_class);
     }
 
     if(isset($_POST["btn1"])) {    
-        $card_car = get_catalog_search();
+        $card_car = get_catalog_search($_POST["brand"],$_POST["year"]);
     }
 
-    $card_car = get_catalog_card_data($cur_class);
-    $num_of_cards_from_query = get_num_catalog_card_data($cur_class);
-    foreach($num_of_cards_from_query as $val_num) {
-        $count_of_cards = $val_num["num"];
-    }
-
-    echo "count:".$count_of_cards; 
+    $row_count = $card_car->rowCount(); 
     
-    $page_count = floor($count_of_cards / $num_of_cards); // rep card_car
+    $page_count = floor($row_count / $num_of_cards); // rep card_car
 
-    if($count_of_cards % $num_of_cards == 0) { // rep card_car=>count_of_cards
+    if($row_count % $num_of_cards == 0) { // rep card_car=>count_of_cards
         $page_count = $page_count - 1;
     }
     

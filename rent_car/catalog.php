@@ -93,7 +93,7 @@
                             </div>
                             <div class="desc_card-catalog">
                                 <div class="card-price">
-                                    <p><?=$val_card["rent_price"] ?>₽ в день</p>
+                                    <p><?=$val_card["rent_price"]+0 ?>₽ в день</p>
                                 </div>
                                 <div class="card-properties">
                                     <p><?=$val_card["brand_name"] ?> <?=$val_card["car_model_name"] ?></p>
