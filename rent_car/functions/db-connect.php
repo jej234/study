@@ -25,11 +25,19 @@ function get_main_card_data($str_num) {
     return $q;
 }
 
-function get_classes() {
+function get_classes($num = 0) {
     global $db;
-    $q = $db->query("SELECT car_class_id, car_class_name FROM car_class");
+
+    if($num == 0) {
+        $q = $db->query("SELECT car_class_id, car_class_name FROM car_class");
+    } else {
+        $q = $db->query("SELECT car_class_id, car_class_name FROM car_class WHERE car_class_id = $num");
+    }
+
+    
     return $q;
 }
+
 
 function get_brands() {
     global $db;
@@ -122,6 +130,42 @@ function get_num_catalog_card_data($class_id) {
         }
 
     
+    return $q;
+}
+
+function get_catalog_search($brand_id=0, $year=0) {
+    global $db;
+
+    if ($year != 0 && $brand_id == 0) {
+        $q = $db->query("SELECT car.car_id, release_date, rent_price, car_model.car_model_name, 
+        brand.brand_name, card_image.link_card_image, transmission.transmission_name
+        FROM car 
+        JOIN car_model ON car.car_model_id = car_model.car_model_id 
+        JOIN brand ON brand.brand_id = car_model.brand_id 
+        JOIN card_image ON card_image.card_image_id = car.card_image_id
+        JOIN transmission ON car.transmission_id = transmission.transmission_id
+        WHERE car.release_date = $year;");
+    } elseif($year == 0 && $brand_id != 0) {
+        $q = $db->query("SELECT car.car_id, release_date, rent_price, car_model.car_model_name, 
+        brand.brand_name, card_image.link_card_image, transmission.transmission_name
+        FROM car 
+        JOIN car_model ON car.car_model_id = car_model.car_model_id 
+        JOIN brand ON brand.brand_id = car_model.brand_id 
+        JOIN card_image ON card_image.card_image_id = car.card_image_id
+        JOIN transmission ON car.transmission_id = transmission.transmission_id
+        WHERE car_model.brand_id = $brand_id;");
+    } elseif($year != 0 && $brand_id != 0) {
+        $q = $db->query("SELECT car.car_id, release_date, rent_price, car_model.car_model_name, 
+        brand.brand_name, card_image.link_card_image, transmission.transmission_name
+        FROM car 
+        JOIN car_model ON car.car_model_id = car_model.car_model_id 
+        JOIN brand ON brand.brand_id = car_model.brand_id 
+        JOIN card_image ON card_image.card_image_id = car.card_image_id
+        JOIN transmission ON car.transmission_id = transmission.transmission_id
+        WHERE car_model.brand_id = $brand_id AND car.release_date = $year;");
+    }
+
+        
     return $q;
 }
 

@@ -28,6 +28,10 @@
         //$card_car = $card_car_classes[$cur_class];
     }
 
+    if(isset($_POST["btn1"])) {    
+        $card_car = get_catalog_search();
+    }
+
     $card_car = get_catalog_card_data($cur_class);
     $num_of_cards_from_query = get_num_catalog_card_data($cur_class);
     foreach($num_of_cards_from_query as $val_num) {

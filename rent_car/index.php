@@ -23,6 +23,10 @@
         $page_id = "catalog";
     }
 
+    if(isset($_POST["btn1"])) {
+        $page_id = "catalog";
+    }
+
     include "{$page_id}.php";
 
     include 'templates/footer.php' 

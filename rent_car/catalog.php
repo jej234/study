@@ -18,7 +18,7 @@
                 </div>
 
                 <div id="search-panel">
-                    <form action="form.php" method="post">
+                    <form action="index.php" method="post">
                         
                     <h2>Поиск:</h2>
                     <div class="search-panel-content">
@@ -52,14 +52,14 @@
                             </select>
                                 
                         </div>
-                        <div class="search-panel-price">
+                        <!-- <div class="search-panel-price">
                             <p>Стоимость: </p>
                             <div class="inputs-price">
                                 <input class="input-price-at" type="number" name="price-at" placeholder="от ₽" min="1000" max="90000">
                                 <input class="input-price-from" type="number" name="price-from" placeholder="до ₽" min="1001" max="90000">
                             </div>
-                        </div>
-                        <button type="submit" class="btn-accept">Поиск</button>
+                        </div> -->
+                        <button name="btn1" value="form1" type="submit" class="btn-accept">Поиск</button>
                     </div>
                     </form>
 
@@ -70,13 +70,16 @@
 
                 <header class="catalog-header">
                     <h1 class="header-page-name">Каталог автомобилей</h1>
-                        <?php 
-                            if ($cur_class == 0) {
-                                echo "<h2 class=\"header-class-name\">Все автомобили</h2>";
+                    <?php 
+                        if ($cur_class == 0) {
+                            echo "<h2 class=\"header-class-name\">Все автомобили</h2>";
                             } else {
-                                echo "<h2 class=\"header-class-name\">$car_classes[$cur_class]</h2>";
+                                $class_arr = get_classes($cur_class);
+                                foreach ($class_arr as $val) {
+                                echo "<h2 class=\"header-class-name\">" . $val["car_class_name"] . "</h2>";
+                                }
                             }
-                        ?>
+                    ?>
                     
                 </header>
                 
