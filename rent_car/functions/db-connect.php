@@ -1,8 +1,8 @@
 <?php
 
-//$db_host = "localhost:3306";
-$db_host = "localhost:3310";
-$db_name = "prokat57";
+$db_host = "localhost:3306";
+//$db_host = "localhost:3310";
+$db_name = "prokat";
 $db_user = "root";
 $db_pass = "";
 
