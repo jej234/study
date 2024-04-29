@@ -673,27 +673,22 @@ footer .socials {
     font-weight: 600;
 }
 
-.auth-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    line-height: 1.5;
-    min-height: 100vh;
-    background: #f3f3f3;
-    flex-direction: column;
-    margin: 0;
+.auth-content {
+    margin: 5%;
 }
+
  
-.auth {
-    background-color: #b43535;
+ .auth {
+    display: block;
+    background-color: #f3f3f3;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
     transition: transform 0.2s;
     width: 500px;
     text-align: center;
-}
+    margin: auto;
+} 
  
 .auth h1 {
     color: #4CAF50;
@@ -708,7 +703,6 @@ footer .socials {
     color: #555;
     font-weight: bold;
 }
- 
  
 .auth input {
     display: block;
@@ -732,7 +726,7 @@ footer .socials {
     width: 100%;
     font-size: 16px;
 }
- 
+
 .auth .wrap {
     display: flex;
     justify-content: center;

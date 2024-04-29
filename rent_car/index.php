@@ -9,9 +9,9 @@
 
     <?php 
 
-    include_once 'templates/header.php'; 
-    include_once 'templates/navbar.php';
-    include_once 'functions/scr-catalog.php';
+    include 'templates/header.php'; 
+    include 'templates/navbar.php';
+    include 'functions/scr-catalog.php';
 
     if (isset($_GET['p'])) {
         $page_id = $_GET['p'];
