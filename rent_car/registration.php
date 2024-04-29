@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <section class="main-content auth-content">
 
     <div class="auth">
