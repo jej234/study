@@ -2,6 +2,22 @@
 session_start();
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include 'templates/head-common.php' ?>
+    <title>Прокат автомобилей в Орле</title>
+</head>
+<body>
+    <main>
+
+    <?php 
+
+    include 'templates/header.php'; 
+    include 'templates/navbar.php';
+
+    ?>
+
 <section class="main-content auth-content">
 
     <div class="auth">
@@ -16,7 +32,14 @@ session_start();
                    name="login-reg"
                    placeholder="Символы латиницы, цифры и знак _" required
                    minlength="6" maxlength="20">
- 
+                <?php
+                    if($_SESSION['r-login']) {
+                        echo '<p'
+                    }
+                    echo $_SESSION['r-login'];
+                    unset($_SESSION['r-login']);
+                ?>
+                
             <label for="password">
                   Ваш пароль:
               </label>
@@ -65,3 +88,8 @@ session_start();
     </div>
             
 </section>
+
+<?php
+    include 'templates/footer.php';
+
+    ?>

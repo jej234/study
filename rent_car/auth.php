@@ -27,7 +27,7 @@
             </div>
         </form>
         <p>Еще не зарегистрированы? 
-              <a href="index.php?p=registration">
+              <a href="registration.php">
                 Создать аккаунт
             </a>
         </p>

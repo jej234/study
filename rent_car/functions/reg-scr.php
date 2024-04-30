@@ -43,8 +43,8 @@ function validateEmail($email) {
 }
 
 if (!validateLogin($login)) {
-    echo "Недопустимый логин\n";
     $send = FALSE;
+    $_SESSION["r_login"] = "Недопустимый логин";
     
 }
 
