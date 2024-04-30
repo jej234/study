@@ -20,7 +20,7 @@ function validateLogin($login) {
 
 // Проверка валидации для пароля
 function validatePassword($password) {
-    $pattern = '/^[a-zA-Z0-9_!@?]{8,20}$/';
+    $pattern = '/^[A-Za-z0-9]\w{8,}$/';
     return preg_match($pattern, $password);
 }
 
@@ -32,7 +32,7 @@ function validateName($name) {
 
 // Проверка валидации для номера телефона
 function validatePhone($phone) {
-    $pattern = '/^7\d{10}$/';
+    $pattern = '/^[7,8]\d{10}$/';
     return preg_match($pattern, $phone);
 }
 
@@ -45,35 +45,46 @@ function validateEmail($email) {
 if (!validateLogin($login)) {
     $send = FALSE;
     $_SESSION["r_login"] = "Недопустимый логин";
-    
+}
+
+$ck_login = check_login($login);
+if ($ck_login && $ck_login->rowCount() == 0) {
+    echo "Пустой результат запроса.";
+} else {
+    echo "Результат запроса не пустой.";
 }
 
 if (!validatePassword($password)) {
-    echo "Недопустимый пароль\n";
     $send = FALSE;
+    $_SESSION["r_pass"] = "Недопустимый пароль";
 }
 
 if (!validateName($name)) {
-    echo "Недопустимое имя\n";
     $send = FALSE;
+    $_SESSION["r_name"] = "Недопустимое имя";
 }
 
 if (!validateName($name)) {
-    echo "Недопустимая фамилия\n";
     $send = FALSE;
+    $_SESSION["r_fname"] = "Недопустимая фамилия";
 }
 
 if (!validatePhone($phone)) {
-    echo "Недопустимый номер телефона\n";
     $send = FALSE;
+    $_SESSION["r_phone"] = "Недопустимый номер телефона";
 }
 
 if (!validateEmail($email)) {
-    echo "Недопустимый email\n";
     $send = FALSE;
+    $_SESSION["r_email"] = "Недопустимый email";
 }
 
+
+if ()
+
 if ($send == FALSE) {
-    
+    header("Location: ../registration.php");
+} else {
+    $password = md5($password);
 }
 ?>

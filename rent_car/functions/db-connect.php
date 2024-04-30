@@ -168,4 +168,10 @@ function get_catalog_search($brand_id=0, $year=0) {
     return $q;
 }
 
+function check_login($login) {
+    global $db;
+    $q = $db->query("SELECT COUNT(*) FROM account WHERE login = $login");
+    return $q;
+}
+
 

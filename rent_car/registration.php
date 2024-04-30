@@ -33,11 +33,10 @@ session_start();
                    placeholder="Символы латиницы, цифры и знак _" required
                    minlength="6" maxlength="20">
                 <?php
-                    if($_SESSION['r-login']) {
-                        echo '<p'
+                    if(isset($_SESSION["r_login"])) {
+                        echo '<div class="msg">'.$_SESSION["r_login"].'</div>';
                     }
-                    echo $_SESSION['r-login'];
-                    unset($_SESSION['r-login']);
+                    unset($_SESSION["r_login"]);
                 ?>
                 
             <label for="password">
@@ -46,9 +45,14 @@ session_start();
             <input type="password"
                    id="password"
                    name="password"
-                   placeholder="Минимум 8 символов, состоящих из символов латиницы, цифр и !_?" required
+                   placeholder="8 символов латиницы, одна цифра 0-9 и один символ !@#$%^&*" required
                    minlength="8" maxlength="20">
-
+                <?php
+                    if(isset($_SESSION["r_pass"])) {
+                        echo '<div class="msg">'.$_SESSION["r_pass"].'</div>';
+                    }
+                    unset($_SESSION["r_pass"]);
+                ?>
                 <h3>Введите сведения о себе:</h3>
             <label for="login-reg">
                 Имя:
@@ -57,6 +61,12 @@ session_start();
                    id="name"
                    name="name"
                    placeholder="Только символы кириллицы" required>
+                <?php
+                    if(isset($_SESSION["r_name"])) {
+                        echo '<div class="msg">'.$_SESSION["r_name"].'</div>';
+                    }
+                    unset($_SESSION["r_name"]);
+                ?>
             <label for="first_name">
                 Фамилия:
             </label>
@@ -64,6 +74,12 @@ session_start();
                    id="first_name"
                    name="first_name"
                    placeholder="Только символы кириллицы" required>
+                <?php
+                    if(isset($_SESSION["r_fname"])) {
+                        echo '<div class="msg">'.$_SESSION["r_fname"].'</div>';
+                    }
+                    unset($_SESSION["r_fname"]);
+                ?>
             <label for="phone">
                 Номер телефона:
             </label>
@@ -72,6 +88,12 @@ session_start();
                    name="phone"
                    placeholder="Номер телефона, начиная с 7" required
                    minlength="11" maxlength="11">
+                <?php
+                    if(isset($_SESSION["r_phone"])) {
+                        echo '<div class="msg">'.$_SESSION["r_phone"].'</div>';
+                    }
+                    unset($_SESSION["r_phone"]);
+                ?>
             <label for="email">
                 Адрес электронной почты:
             </label>
@@ -79,6 +101,12 @@ session_start();
                    id="email"
                    name="email"
                    placeholder="Адрес почты" required>
+                <?php
+                    if(isset($_SESSION["r_email"])) {
+                        echo '<div class="msg">'.$_SESSION["r_email"].'</div>';
+                    }
+                    unset($_SESSION["r_email"]);
+                ?>
             <div class="wrap">
                 <button type="submit">
                     Регистрация
