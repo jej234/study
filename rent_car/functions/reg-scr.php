@@ -47,12 +47,12 @@ if (!validateLogin($login)) {
     $_SESSION["r_login"] = "Недопустимый логин";
 }
 
-$ck_login = check_login($login);
-if ($ck_login && $ck_login->rowCount() == 0) {
-    echo "Пустой результат запроса.";
-} else {
-    echo "Результат запроса не пустой.";
-}
+// $ck_login = check_login($login);
+// if ($ck_login && $ck_login->rowCount() == 0) {
+//     echo "Пустой результат запроса.";
+// } else {
+//     echo "Результат запроса не пустой.";
+// }
 
 if (!validatePassword($password)) {
     $send = FALSE;
@@ -80,11 +80,10 @@ if (!validateEmail($email)) {
 }
 
 
-if ()
-
 if ($send == FALSE) {
     header("Location: ../registration.php");
 } else {
     $password = md5($password);
+    echo "<h1>Данные для регистрации прошли проверку</h1>";
 }
 ?>
