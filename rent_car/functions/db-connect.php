@@ -1,7 +1,7 @@
 <?php
 
-$db_host = "localhost:3306";
-//$db_host = "localhost:3310";
+//$db_host = "localhost:3306";
+$db_host = "localhost:3310";
 $db_name = "prokat";
 $db_user = "root";
 $db_pass = "";
@@ -174,4 +174,29 @@ function check_login($login) {
     return $q;
 }
 
+function get_exists_models() {
+    global $db;
+    $q = $db->query("SELECT *
+    FROM car_model
+    JOIN brand USING (brand_id)
+    JOIN car_class USING (car_class_id)");
+    return $q;
+}
 
+function get_body() {
+    global $db;
+    $q = $db->query("SELECT body_id, body_name FROM body");
+    return $q;
+}
+
+function get_color() {
+    global $db;
+    $q = $db->query("SELECT color_id, color_name FROM color");
+    return $q;
+}
+
+function get_transmission() {
+    global $db;
+    $q = $db->query("SELECT transmission_id, transmission_name FROM transmission");
+    return $q;
+}
