@@ -753,6 +753,13 @@ select {
     box-sizing: border-box; /* Учитывает padding и border в общей ширине элемента */
 }
 
+textarea {
+    width: 100%;
+    padding: 8px; /* Добавляет внутренний отступ контента внутри select */
+    margin: 5px 0; /* Устанавливает отступы сверху и снизу */
+    box-sizing: border-box; /* Учитывает padding и border в общей ширине элемента */
+}
+
 @media screen and (max-width: 700px) {
     footer {
         height: 61vh;

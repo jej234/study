@@ -22,11 +22,11 @@ session_start();
 
     <div class="auth">
         <h1>Добавление информации</h1>
-        <form action="">
-            <label for="brand">
+        <form action="functions/add-scr.php" method="POST" enctype="multipart/form-data">
+            <label for="car_model_id">
                 Выбор из имеющихся моделей автомобилей
             </label>
-            <select id="brand" name="brand" required>
+            <select id="car_model_id" name="car_model_id" required>
             <?php
                 $exist_models = get_exists_models(); 
                 foreach ($exist_models as $val): ?>
@@ -56,10 +56,10 @@ session_start();
             <?php endforeach; ?>
             </select>
             
-            <label for="color">
+            <label for="transmission">
                 Тип КПП
             </label>
-            <select id="color" name="color" required>
+            <select id="transmission" name="transmission" required>
             <?php
                 $tr = get_transmission(); 
                 foreach ($tr as $val): ?>
@@ -67,8 +67,39 @@ session_start();
             <?php endforeach; ?>
             </select>
 
+            <label>
+                Год выпуска
+            </label>
+                <input type="text" name="release date" placeholder="Год" required
+                minlength="4" maxlength="4">
             
- 
+            <label>
+                Описание
+            </label>
+                <textarea name="description" placeholder="Введите текст" maxlength="1500"></textarea>
+            
+            <label>
+                Стоимость проката
+            </label>
+                <input type="text" name="rent_price" placeholder="Стоимость" required
+                minlength="4" maxlength="6">
+
+            <label>
+                Изображение карточки
+            </label>
+                <input type="file" name="card_img" required>
+                <?php
+                    if(isset($_SESSION["msg"])) {
+                        echo '<div class="msg">'.$_SESSION["msg"].'</div>';
+                    }
+                    unset($_SESSION["msg"]);
+                ?>
+            
+            <label>
+                Альбом изображений автомобиля
+            </label>
+                <input type="file" name="gallery[]" multiple required>
+
             <div class="wrap">
                 <button type="submit">
                     Добавить

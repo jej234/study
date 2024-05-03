@@ -1,7 +1,7 @@
 <?php
 
-//$db_host = "localhost:3306";
-$db_host = "localhost:3310";
+$db_host = "localhost:3306";
+//$db_host = "localhost:3310";
 $db_name = "prokat";
 $db_user = "root";
 $db_pass = "";
@@ -200,3 +200,10 @@ function get_transmission() {
     $q = $db->query("SELECT transmission_id, transmission_name FROM transmission");
     return $q;
 }
+
+// function insert_car() {
+//     global $db;
+//     $q = $db->query("INSERT INTO car(car_model_id,body_id,color_id, transmission_id,release_date) 
+//                     VALUES );
+//     return $q;
+// }
