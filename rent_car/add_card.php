@@ -20,6 +20,16 @@ session_start();
 
 <section class="main-content auth-content">
 
+    
+        <?php
+        if(isset($_SESSION["add_card"])) {
+                        echo '<div class="auth">
+                        <p class="msg" style="color: green;">Карточка добавлена успешно</p>
+                        </div>';
+                    }
+                    unset($_SESSION["add_card"]);
+        
+        ?>
     <div class="auth">
         <h1>Добавление информации</h1>
         <form action="functions/add-scr.php" method="POST" enctype="multipart/form-data">
@@ -71,7 +81,7 @@ session_start();
                 Год выпуска
             </label>
                 <input type="text" name="release date" placeholder="Год" required
-                minlength="4" maxlength="4">
+                minlength="4" maxlength="4" pattern="\d\d\d\d">
             
             <label>
                 Описание
@@ -82,12 +92,12 @@ session_start();
                 Стоимость проката
             </label>
                 <input type="text" name="rent_price" placeholder="Стоимость" required
-                minlength="4" maxlength="6">
+                minlength="4" maxlength="6" pattern="\d{3,}">
 
             <label>
                 Изображение карточки
             </label>
-                <input type="file" name="card_img" required>
+                <input type="file" name="card_img">
                 <?php
                     if(isset($_SESSION["msg"])) {
                         echo '<div class="msg">'.$_SESSION["msg"].'</div>';
@@ -98,7 +108,7 @@ session_start();
             <label>
                 Альбом изображений автомобиля
             </label>
-                <input type="file" name="gallery[]" multiple required>
+                <input type="file" name="gallery[]" multiple>
 
             <div class="wrap">
                 <button type="submit">

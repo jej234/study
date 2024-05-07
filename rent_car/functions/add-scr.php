@@ -12,13 +12,15 @@
     //     header("Location: ../add_card.php");
     // }
 
-    $path = 'resources/'.time().$_FILES['card_img']['name'];
-
+    $path_img_one = 'resources/'.time().$_FILES['card_img']['name'];
+    $gallery_path_arr = [];
+    $down_status = FALSE;
     echo '<pre>';
 
-    if (move_uploaded_file($_FILES['card_img']['tmp_name'], '../'.$path)) {
+    if (move_uploaded_file($_FILES['card_img']['tmp_name'], '../'.$path_img_one)) {
         echo "Файл корректен и был успешно загружен.\n";
         echo $_FILES['card_img']['type'];
+        $down_status = TRUE;
     } else {
         echo "Неудача\n";
     }
@@ -30,14 +32,22 @@
     for($i = 0; $i < $count_cards; $i++) {
         $path = 'resources/'.time().$_FILES['gallery']['name'][$i];
         echo $path;
+        
         echo '<pre>';
 
         if (move_uploaded_file($_FILES['gallery']['tmp_name'][$i], '../'.$path)) {
             echo "Файл {$_FILES['gallery']['name'][$i]} корректен и был успешно загружен.\n";
-
+            $down_status = TRUE;
+            $gallery_path_arr[$i] = $path;
         } else {
             echo "Неудача при загрузке файла {$_FILES['gallery']['name'][$i]}.\n";
+            $down_status = FALSE;
         }
+    }
+
+    if($down_status == true) {
+        $_SESSION["add_card"] = 1;
+        
     }
 
 ?>
