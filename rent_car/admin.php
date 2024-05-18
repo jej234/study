@@ -24,7 +24,7 @@ session_start();
         <h2>Меню администратора</h2>
         <ul>
             <li><a href="add_card.php">Добавить карточку</a></li>
-            <li><a href="edit_card.php">Редактировать карточку</a></li>
+            <li><a href="edit-card.php">Редактировать карточку</a></li>
             <li><a href="delete_card.php">Удалить карточку</a></li>
         </ul>
 </div>

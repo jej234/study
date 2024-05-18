@@ -822,6 +822,21 @@ textarea {
     }
 }
 
+.car-list {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+}
+
+.car-item {
+    display: flex;
+    align-items: center;
+}
+
+.car-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
 
 
 

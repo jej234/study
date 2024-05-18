@@ -201,11 +201,196 @@ function get_transmission() {
     return $q;
 }
 
-function insert_car($car_model, $body, $color, $transmission, $release_date, $description, $rent_price, $path_img) {
+function insert_car($car_model, $body, $color, $transmission, $release_date, $description, $rent_price, $path_img,$img_arr) {
     global $db;
+    $q = $db->query("INSERT INTO card_image(link_card_image) VALUES ('$path_img')");
+    $val = $db->query("SELECT MAX(card_image_id) FROM card_image")->fetchColumn();
     $q = $db->query("INSERT INTO car(car_model_id,body_id,color_id, transmission_id,release_date, 
-                    description, rent_price) 
-                    VALUES ($car_model, $body, $color, $transmission, $release_date, $description, $rent_price,
-                    $path_img)");
+                    description, rent_price, card_image_id, status_id) 
+                    VALUES ($car_model, $body, $color, $transmission, $release_date, '$description', $rent_price,
+                    $val, 1)");
+    $car = $db->query("SELECT MAX(car_id) FROM car")->fetchColumn();
+    // загрузка массива фотографий
+    $stmt = $db->prepare("INSERT INTO car_image (car_id, link_car_image) VALUES (:car_id, :photo_path)");
+    $db->beginTransaction();
+
+    foreach ($img_arr as $photoPath) {
+        $stmt->bindParam(':car_id', $car);
+        $stmt->bindParam(':photo_path', $photoPath);
+        $stmt->execute();
+    }
+
+    $db->commit();
+    
+    if($q) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function get_card_list() {
+    global $db;
+    $q = $db->query("SELECT car_id, brand.brand_name, car_model.car_model_name, release_date
+                    FROM car
+                    JOIN car_model USING(car_model_id)
+                    JOIN brand USING(brand_id)");
     return $q;
 }
+
+
+
+/*
+
+resources/mb14.jpg
+	
+
+resources/bmw1.jpg
+	
+
+resources/reno1.jpg
+	
+
+resources/corolla.jpg
+	
+
+resources/fiat1.jpg
+
+resources/mb14.jpg
+1
+	
+Изменить
+Копировать
+Удалить
+resources/mb1.jpg
+1
+	
+Изменить
+Копировать
+Удалить
+resources/mb2.jpg
+1
+	
+Изменить
+Копировать
+Удалить
+resources/mb3.jpg
+1
+	
+Изменить
+Копировать
+Удалить
+resources/bmw1.jpg
+2
+	
+Изменить
+Копировать
+Удалить
+resources/bmw2.jpg
+2
+	
+Изменить
+Копировать
+Удалить
+resources/bmw3.jpg
+2
+	
+Изменить
+Копировать
+Удалить
+resources/bmw4.jpg
+2
+	
+Изменить
+Копировать
+Удалить
+resources/reno1.jpg
+3
+	
+Изменить
+Копировать
+Удалить
+resources/reno2.jpg
+3
+	
+Изменить
+Копировать
+Удалить
+resources/reno3.jpg
+3
+	
+Изменить
+Копировать
+Удалить
+resources/reno4.jpg
+3
+	
+Изменить
+Копировать
+Удалить
+resources/corolla.jpg
+4
+	
+Изменить
+Копировать
+Удалить
+resources/corolla1.jpg
+4
+	
+Изменить
+Копировать
+Удалить
+resources/corolla2.jpg
+4
+	
+Изменить
+Копировать
+Удалить
+resources/corolla3.jpg
+4
+	
+Изменить
+Копировать
+Удалить
+resources/fiat1.jpg
+5
+	
+Изменить
+Копировать
+Удалить
+resources/fiat2.jpg
+5
+	
+Изменить
+Копировать
+Удалить
+resources/fiat3.jpg
+5
+	
+Изменить
+Копировать
+Удалить
+resources/fiat4.jpg
+5
+
+INSERT INTO card_image (link_car_image, car_id) values 
+('resources/mb4.jpg', 1),
+('resources/mb1.jpg', 1),
+('resources/mb2.jpg', 1),
+('resources/mb3.jpg', 1),
+('resources/bmw1.jpg', 2),
+('resources/bmw2.jpg', 2),
+('resources/bmw3.jpg', 2),
+('resources/bmw4.jpg', 2),
+('resources/reno1.jpg', 3),
+('resources/reno2.jpg', 3),
+('resources/reno3.jpg', 3),
+('resources/reno4.jpg', 3),
+('resources/corolla.jpg', 4),
+('resources/corolla1.jpg', 4),
+('resources/corolla2.jpg', 4),
+('resources/corolla3.jpg', 4),
+('resources/fiat1.jpg', 5),
+('resources/fiat2.jpg', 5),
+('resources/fiat3.jpg', 5),
+('resources/fiat4.jpg', 5); */
