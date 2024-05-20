@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "functions/db-connect.php"
+
 ?>
 
 <!DOCTYPE html>
@@ -23,29 +23,41 @@ include "functions/db-connect.php"
 
     
         <?php
-        if(isset($_SESSION["add_card"])) {
+        if(isset($_SESSION["edit_card"])) {
                         echo '<div class="auth">
-                        <p class="msg" style="color: green;">Карточка добавлена успешно</p>
+                        <p class="msg" style="color: green;">Изменения сохранены</p>
                         </div>';
                     }
-                    unset($_SESSION["add_card"]);
-        
+                    unset($_SESSION["edit_card"]);
+            print_r($_POST);
         ?>
-    <div class="auth">
+    <div class="edit">
         <h1>Редактирование информации</h1>
-        <form action="process_form.php" method="post">
-            <div class="car-list">
+        <form method="POST" action="edit-scr.php">
+        <table>
+            <tr>
+                <th>Выбор</th>
+                <th>ID карточки</th>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Год выпуска</th>
+                <th>Стоимость проката</th>
+            </tr>
             <?php
-                $cars = get_card_list();
-                foreach ($cars as $car) {
-                    echo '<div class="car-item">
-                    <input type="checkbox" name="selected_car_id" value="' . $car['car_id'] . '">
-                    <span>' . $car['brand_name'] . ' ' . $car['car_model_name'] . ' (' . $car['release_date'] . ')</span>
-                </div>';
-                }
+            $card_list = get_card_list();
+            foreach ($card_list as $card) {
+                echo "<tr>";
+                echo "<td><input type='radio' name='car_id' value='".$card['car_id']."'></td>";
+                echo "<td>".$card['car_id']."</td>";
+                echo "<td>".$card['brand_name']."</td>";
+                echo "<td>".$card['car_model_name']."</td>";
+                echo "<td>".$card['release_date']."</td>";
+                echo "<td>".$card['rent_price']."</td>";
+                echo "</tr>";
+            }
             ?>
-            </div>
-        <input type="submit" value="Submit">
+        </table>
+        <input type="submit" name="edit" value="Редактировать">
         </form>
         </div>
             

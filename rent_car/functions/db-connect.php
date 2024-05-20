@@ -231,7 +231,7 @@ function insert_car($car_model, $body, $color, $transmission, $release_date, $de
 
 function get_card_list() {
     global $db;
-    $q = $db->query("SELECT car_id, brand.brand_name, car_model.car_model_name, release_date
+    $q = $db->query("SELECT car_id, brand.brand_name, car_model.car_model_name, release_date, rent_price
                     FROM car
                     JOIN car_model USING(car_model_id)
                     JOIN brand USING(brand_id)");
