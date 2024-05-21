@@ -25,7 +25,7 @@ session_start();
         <ul>
             <li><a href="add_card.php">Добавить карточку</a></li>
             <li><a href="edit-card.php">Редактировать карточку</a></li>
-            <li><a href="delete_card.php">Удалить карточку</a></li>
+            <li><a href="delete-card.php">Удалить карточку</a></li>
         </ul>
 </div>
             

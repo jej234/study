@@ -238,7 +238,17 @@ function get_card_list() {
     return $q;
 }
 
-
+function update_card($car_id,$desc,$price) {
+    global $db;
+    $q = $db->query("UPDATE car SET description = '$desc', rent_price = $price
+                     WHERE car_id = $car_id;");
+    return $q;
+}
+function delete_card($car_id) {
+    global $db;
+    $q = $db->query("DELETE FROM car WHERE car_id = $car_id;");
+    return $q;
+}
 
 /*
 

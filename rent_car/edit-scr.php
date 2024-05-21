@@ -1,8 +1,6 @@
 <?php
 session_start();
-    if(isset($_POST['1'])) {
-        header("Location: edit-card.php");
-    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +21,6 @@ session_start();
 
 <section class="main-content auth-content">
 
-    
         <?php
         if(isset($_SESSION["add_card"])) {
                         echo '<div class="auth">
@@ -34,15 +31,16 @@ session_start();
 
         $statement = get_data_car_page($_POST['car_id']);
         $data_car= $statement->fetch(PDO::FETCH_ASSOC); 
+        $_SESSION['car_id'] = $_POST['car_id'];
 
         if ($data_car) {
             $desc = $data_car['description'];
             $price = $data_car['rent_price']; 
         }
         ?>
-    <div class="auth" action="edit-scr.php">
+    <div class="auth">
         <h1>Редактирование информации</h1>
-        <form action="edit.php" method="POST">
+        <form action="functions/edit-script.php" method="POST">
             <label>
                 Описание
             </label>
