@@ -6,9 +6,9 @@ print_r($_POST);
 $send = TRUE;
 
 $login = $_POST["login-reg"];
-$password = $_POST["password"];
+$pass = $_POST["password"];
 $name = $_POST["name"];
-$first_name = $_POST["first_name"];
+$f_name = $_POST["first_name"];
 $phone = $_POST["phone"];
 $email = $_POST["email"];
 
@@ -20,7 +20,7 @@ function validateLogin($login) {
 
 // Проверка валидации для пароля
 function validatePassword($password) {
-    $pattern = '/^[A-Za-z0-9]\w{8,}$/';
+    $pattern = '/^[A-Z0-9]{6,}$/';
     return preg_match($pattern, $password);
 }
 
@@ -83,7 +83,9 @@ if (!validateEmail($email)) {
 if ($send == FALSE) {
     header("Location: ../registration.php");
 } else {
-    $password = md5($password);
-    echo "<h1>Данные для регистрации прошли проверку</h1>";
+    $_SESSION["success"] = "Вы зарегистрированы! Войдите, используя логин и пароль";
+    $password = md5($pass);
+    registration($login, $pass, $f_name, $name,$phone,$email);
+    header("Location: ../registration.php");
 }
 ?>

@@ -21,6 +21,12 @@ session_start();
 <section class="main-content auth-content">
 
     <div class="auth">
+    <?php
+        if(isset($_SESSION["success"])) {
+            echo '<div class="msg">'.$_SESSION["success"].'</div>';
+        }
+        unset($_SESSION["success"]);
+    ?>
         <h1>Регистрация на сайте</h1>
         <h3>Введите учетные данные</h3>
         <form action="functions/reg-scr.php" method="POST">
