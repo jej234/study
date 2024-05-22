@@ -23,7 +23,9 @@ session_start();
     <div class="auth">
     <?php
         if(isset($_SESSION["success"])) {
-            echo '<div class="msg">'.$_SESSION["success"].'</div>';
+            echo '<div class="auth">
+            <p class="msg" style="color: green;">Изменения сохранены</p>
+            </div>';
         }
         unset($_SESSION["success"]);
     ?>

@@ -2,6 +2,7 @@
 <?php
 session_start();
 print_r($_POST);
+include 'db-connect.php';
 
 $send = TRUE;
 
@@ -20,7 +21,7 @@ function validateLogin($login) {
 
 // Проверка валидации для пароля
 function validatePassword($password) {
-    $pattern = '/^[A-Z0-9]{6,}$/';
+    $pattern = '/[A-Za-z0-9]{6,}$/';
     return preg_match($pattern, $password);
 }
 
@@ -54,17 +55,17 @@ if (!validateLogin($login)) {
 //     echo "Результат запроса не пустой.";
 // }
 
-if (!validatePassword($password)) {
+/*if (!validatePassword($password)) {
     $send = FALSE;
     $_SESSION["r_pass"] = "Недопустимый пароль";
-}
+}*/
 
 if (!validateName($name)) {
     $send = FALSE;
     $_SESSION["r_name"] = "Недопустимое имя";
 }
 
-if (!validateName($name)) {
+if (!validateName($f_name)) {
     $send = FALSE;
     $_SESSION["r_fname"] = "Недопустимая фамилия";
 }
@@ -85,7 +86,7 @@ if ($send == FALSE) {
 } else {
     $_SESSION["success"] = "Вы зарегистрированы! Войдите, используя логин и пароль";
     $password = md5($pass);
-    registration($login, $pass, $f_name, $name,$phone,$email);
+    registration($login, $password, $f_name, $name,$phone,$email);
     header("Location: ../registration.php");
 }
 ?>

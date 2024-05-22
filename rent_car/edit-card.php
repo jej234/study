@@ -25,7 +25,7 @@ session_start();
         <?php
         if(isset($_SESSION["edit_card"])) {
                         echo '<div class="auth">
-                        <p class="msg" style="color: green;">Изменения сохранены</p>
+                        <p class="msg" style="color: green;">Вы зарегистрированы!</p>
                         </div>';
                     }
                     unset($_SESSION["edit_card"]);

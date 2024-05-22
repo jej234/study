@@ -255,7 +255,11 @@ function registration($login, $pass, $f_name, $name,$phone,$email) {
     $db->query("INSERT INTO account(login,password) VALUES ('$login','$pass');");
     $val = $db->query("SELECT MAX(account_id) FROM account")->fetchColumn();
     $db->query("INSERT INTO client(first_name,name,phone_num,e_mail,account_id,user_type_id) 
-                VALUES ('$f_name','$name',$phone,$email,$val,1);");
+                VALUES ('$f_name','$name','$phone','$email',$val,1);");
+}
+
+function login($login, $pass) {
+    
 }
 
 /*
