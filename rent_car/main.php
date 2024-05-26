@@ -1,4 +1,12 @@
 
+<div id="discountCountdown">
+<div class="countdown-item">00</div>
+    <div class="countdown-item">00</div>
+    <div class="countdown-item">00</div>    
+</div>
+div
+<h3>Осталось до действия скидки 25% на BMW520D</h3>
+<script src="js-scr.js"></script>
 
 <section class="main-content">
 

@@ -1,0 +1,13 @@
+#discountCountdown {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-size: 24px;
+    color: blue;
+}
+
+.countdown-item {
+    margin: 0 10px; /* Adjust the value as needed for the spacing */
+}
