@@ -1,4 +1,5 @@
-    <nav>
+
+<nav>
     <ul>
         <?php 
             $menu_arr = get_menu();

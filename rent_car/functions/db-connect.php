@@ -259,162 +259,62 @@ function registration($login, $pass, $f_name, $name,$phone,$email) {
     $db->query("INSERT INTO client(first_name,name,phone_num,e_mail,account_id,user_type_id) 
                 VALUES ('$f_name','$name','$phone','$email',$val,1);");
 }
+function get_login($login) {
+    global $db;
+    $stmt = $db->prepare("SELECT login FROM account WHERE login = :login");
+    $stmt->execute(['login' => $login]);
+    
+    if ($stmt) {
+        $log = $stmt->fetchColumn();
+        
+        if ($log !== false) {
+            return 0; // Login exists
+        } else {
+            return 1; // Login does not exist
+        }
+    }
+}
 
-function login($login, $pass) {
+function get_pass($login, $pass) {
+    global $db;
+    
+    $stmt = $db->prepare("SELECT password FROM account WHERE login = :login");
+    $stmt->execute(['login' => $login]);
+    
+    if ($stmt) {
+        $p = $stmt->fetchColumn();
+        
+        if ($p !== false && $p == $pass) {
+            return 0; // Password matches
+        } else {
+            return 1; // Password does not match
+        }
+    } 
+}
+
+function get_user($login) {
+    global $db;
+    $db->query("INSERT INTO account(login,password) VALUES ('$login','$pass');");
     
 }
 
-/*
+/*function get_login($login) {
+    global $db;
+    $log = $db->query("SELECT login FROM account WHERE login = $login;");
+    $log = $log->fetchColumn();
+    if ($log != NULL) {
+        return 0;
+    } else {
+        return 1;
+    }
+} 
 
-resources/mb14.jpg
-	
-
-resources/bmw1.jpg
-	
-
-resources/reno1.jpg
-	
-
-resources/corolla.jpg
-	
-
-resources/fiat1.jpg
-
-resources/mb14.jpg
-1
-	
-Изменить
-Копировать
-Удалить
-resources/mb1.jpg
-1
-	
-Изменить
-Копировать
-Удалить
-resources/mb2.jpg
-1
-	
-Изменить
-Копировать
-Удалить
-resources/mb3.jpg
-1
-	
-Изменить
-Копировать
-Удалить
-resources/bmw1.jpg
-2
-	
-Изменить
-Копировать
-Удалить
-resources/bmw2.jpg
-2
-	
-Изменить
-Копировать
-Удалить
-resources/bmw3.jpg
-2
-	
-Изменить
-Копировать
-Удалить
-resources/bmw4.jpg
-2
-	
-Изменить
-Копировать
-Удалить
-resources/reno1.jpg
-3
-	
-Изменить
-Копировать
-Удалить
-resources/reno2.jpg
-3
-	
-Изменить
-Копировать
-Удалить
-resources/reno3.jpg
-3
-	
-Изменить
-Копировать
-Удалить
-resources/reno4.jpg
-3
-	
-Изменить
-Копировать
-Удалить
-resources/corolla.jpg
-4
-	
-Изменить
-Копировать
-Удалить
-resources/corolla1.jpg
-4
-	
-Изменить
-Копировать
-Удалить
-resources/corolla2.jpg
-4
-	
-Изменить
-Копировать
-Удалить
-resources/corolla3.jpg
-4
-	
-Изменить
-Копировать
-Удалить
-resources/fiat1.jpg
-5
-	
-Изменить
-Копировать
-Удалить
-resources/fiat2.jpg
-5
-	
-Изменить
-Копировать
-Удалить
-resources/fiat3.jpg
-5
-	
-Изменить
-Копировать
-Удалить
-resources/fiat4.jpg
-5
-
-INSERT INTO card_image (link_car_image, car_id) values 
-('resources/mb4.jpg', 1),
-('resources/mb1.jpg', 1),
-('resources/mb2.jpg', 1),
-('resources/mb3.jpg', 1),
-('resources/bmw1.jpg', 2),
-('resources/bmw2.jpg', 2),
-('resources/bmw3.jpg', 2),
-('resources/bmw4.jpg', 2),
-('resources/reno1.jpg', 3),
-('resources/reno2.jpg', 3),
-('resources/reno3.jpg', 3),
-('resources/reno4.jpg', 3),
-('resources/corolla.jpg', 4),
-('resources/corolla1.jpg', 4),
-('resources/corolla2.jpg', 4),
-('resources/corolla3.jpg', 4),
-('resources/fiat1.jpg', 5),
-('resources/fiat2.jpg', 5),
-('resources/fiat3.jpg', 5),
-('resources/fiat4.jpg', 5); */
+function get_pass($login, $pass) {
+    global $db;
+    $p = $db->query("SELECT password FROM account WHERE login = $login;")->fetchColumn();
+    if ($p == $pass) {
+        return 0;
+    } else {
+        return 1;
+    }
+} */

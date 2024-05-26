@@ -1,9 +1,17 @@
 <section class="main-content auth-content">
 
+<?php
+if(isset($_SESSION['msg'])) {
+            echo '<div class="auth">
+            <p class="msg" style="color: red;">Неверный логин или пароль</p>
+            </div>';
+        }
+        unset($_SESSION['msg']);
+?>
     <div class="auth">
         <h1>Вход на сайт</h1>
         <h3>Введите учетные данные</h3>
-        <form action="">
+        <form action="functions/auth-scr.php" method="POST">
             <label for="login">
                   Имя пользователя:
               </label>

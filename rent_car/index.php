@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +30,10 @@
     if(isset($_POST["btn1"])) {
         $page_id = "catalog";
     }
+
+    // if (isset($_GET['p']) && $_GET['p'] == "auth") {
+    //     $_SESSION['msg'] = 1;
+    // } 
 
     include "{$page_id}.php";
 

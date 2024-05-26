@@ -24,7 +24,7 @@ session_start();
     <?php
         if(isset($_SESSION["success"])) {
             echo '<div class="auth">
-            <p class="msg" style="color: green;">Изменения сохранены</p>
+            <p class="msg" style="color: green;">Вы зарегистрированы! Войдите, используя логин и пароль</p>
             </div>';
         }
         unset($_SESSION["success"]);
