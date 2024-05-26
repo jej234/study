@@ -1,7 +1,7 @@
 <?php
 
-$db_host = "localhost:3306";
-// $db_host = "localhost:3310";
+//$db_host = "localhost:3306";
+$db_host = "localhost:3310";
 $db_name = "prokat";
 $db_user = "root";
 $db_pass = "";
@@ -294,8 +294,11 @@ function get_pass($login, $pass) {
 
 function get_user($login) {
     global $db;
-    $db->query("INSERT INTO account(login,password) VALUES ('$login','$pass');");
-    
+    $stmt = $db->prepare("SELECT user_type_id FROM client 
+                        JOIN account USING(account_id) WHERE login = :login");
+    $stmt->execute(['login' => $login]);
+    $log = $stmt->fetchColumn();
+    return $log;
 }
 
 /*function get_login($login) {

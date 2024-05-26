@@ -9,7 +9,8 @@ $ck_login = get_login($_POST['login']);
 $ck_pass = get_pass($_POST['login'],md5($_POST['password']));
 if ($ck_login == 0 && $ck_pass == 0) {
     echo "Вошли";
-    $_SESSION['']
+    $user_type = get_user($_POST['login']);
+    $_SESSION['user'] = $user_type;
     header("Location: ../index.php");   
     
 } else {
