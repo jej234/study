@@ -25,12 +25,13 @@ session_start();
         <?php
         if(isset($_SESSION["edit_card"])) {
                         echo '<div class="auth">
-                        <p class="msg" style="color: green;">Вы зарегистрированы!</p>
+                        <p class="msg" style="color: green;">Изменения сохранены</p>
                         </div>';
                     }
                     unset($_SESSION["edit_card"]);
-            print_r($_POST);
+            
         ?>
+    <p><a href = "admin.php">На главную</a></p>
     <div class="edit">
         <h1>Редактирование информации</h1>
         <form method="POST" action="edit-scr.php">

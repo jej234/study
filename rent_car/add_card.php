@@ -30,6 +30,7 @@ session_start();
                     unset($_SESSION["add_card"]);
         
         ?>
+    <p><a href = "admin.php">На главную</a></p>
     <div class="auth">
         <h1>Добавление информации</h1>
         <form action="functions/add-scr.php" method="POST" enctype="multipart/form-data">

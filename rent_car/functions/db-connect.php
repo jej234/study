@@ -1,7 +1,7 @@
 <?php
 
-//$db_host = "localhost:3306";
-$db_host = "localhost:3310";
+$db_host = "localhost:3306";
+// $db_host = "localhost:3310";
 $db_name = "prokat";
 $db_user = "root";
 $db_pass = "";
@@ -246,7 +246,9 @@ function update_card($car_id,$desc,$price) {
 }
 function delete_card($car_id) {
     global $db;
+    $c_id = $db->query("SELECT MAX(card_image_id) FROM car WHERE car_id = $car_id;")->fetchColumn();
     $q = $db->query("DELETE FROM car WHERE car_id = $car_id;");
+    $q = $db->query("DELETE FROM card_image WHERE card_image_id = $c_id");
     return $q;
 }
 

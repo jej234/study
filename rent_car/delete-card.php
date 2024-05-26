@@ -29,8 +29,9 @@ session_start();
                         </div>';
                     }
                     unset($_SESSION["delete_card"]);
-            print_r($_POST);
+            
         ?>
+    <p><a href = "admin.php">На главную</a></p>
     <div class="edit">
         <h1>Удаление информации</h1>
         <form method="POST" action="functions/delete-scr.php">
@@ -59,7 +60,7 @@ session_start();
             }
             ?>
         </table>
-        <input type="submit" name="edit" value="Редактировать">
+        <input type="submit" name="edit" value="Удалить">
         </form>
         </div>
             
