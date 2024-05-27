@@ -25,7 +25,7 @@ function discountCountdown(endTime) {
     }, 1000);
 }
 
-// Установите дату и время окончания скидки для автомобиля из вашей базы данных
+
 const discountEndDate = 'Jun 1, 2024 00:00:00';
 discountCountdown(discountEndDate);
 
