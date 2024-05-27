@@ -4,7 +4,6 @@ $u_type = 0;
 $menu_arr = get_menu();
 $menu_arr_f = $menu_arr->fetchAll(PDO::FETCH_ASSOC);
 $count = count($menu_arr_f);
-echo $u_type;
 if(isset($_SESSION['user'])) {
     $u_type = $_SESSION['user'];
 }
