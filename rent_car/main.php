@@ -15,7 +15,7 @@
         <div class="skid" style="display: flex;">
             <h2 style="text-decoration: line-through;">Вместо 15000₽</h2>
         </div>
-        <img src="resources\bmw1.jpg" style="display: block; margin: 0 auto; height: 250    px;">
+        <img src="resources\bmw1.jpg" style="display: block; margin: 0 auto; height: 250px;">
         <h1 style="color: red;">10000₽</h2>
         
     </div>

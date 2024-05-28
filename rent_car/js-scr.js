@@ -12,7 +12,7 @@ function discountCountdown(endTime) {
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         document.getElementById('discountCountdown').innerHTML = `
-            <div>${days} дней</div>
+            <div>${days} дня</div>
             <div>${hours} часов</div>
             <div>${minutes} минут</div>
             <div>${seconds} секунд</div>
